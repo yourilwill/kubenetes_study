@@ -16,9 +16,9 @@ mongod \
 
 create_user() {
 echo
-echo ">create user ..."
+echo "> create user ..."
 echo
-if [ ! "$MONOG_INITDN_ROOT_USERNAME" ] || [ ! "$MONGO_INITDB_ROOT_PASSWORD" ]; then
+if [ ! "$MONGO_INITDB_ROOT_USERNAME" ] || [ ! "$MONGO_INITDB_ROOT_PASSWORD" ]; then
   return
 fi
 mongo "${MONGO_INITDB_DATABASE}" <<-EOS
