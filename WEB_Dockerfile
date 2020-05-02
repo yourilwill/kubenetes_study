@@ -1,0 +1,10 @@
+FROM nginx:1.17.2-alpine
+
+COPY ./settings/* /home/nginx/
+
+RUN cd /home/nginx; \
+    mv docker-entrypoint3.sh /usr/local/bin; \
+    chmod +x /usr/local/bin/docker-entrypoint3.sh;
+
+ENTRYPOINT ["docker-entrypoint3.sh"]
+CMD ["nginx", "-g", "daemon off;"]
